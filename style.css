@@ -36,10 +36,10 @@ section {
 }
 
 .photo {
-    max-width: 300px;
+    max-width: 400px;
     margin-right: 20px;
     opacity: 0;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 3s ease-in-out;
 }
 
 .photo.show {
