@@ -32,6 +32,14 @@ section {
 }
 
 .photo {
-    max-width: 150px;
-    border-radius: 50%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #333;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.photo.show {
+    opacity: 1;
 }
