@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GONG Zekang</title>
+    <title>Zekang Gong's Academic Homepage</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#interests">Interest</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#cv">CV</a></li>
             </ul>
         </nav>
@@ -21,29 +23,58 @@
     <section id="about">
         <h1>About Me</h1>
         <div class="about-content">
-        <img src="imgs/portrait.jpg" alt="个人照片" class="photo">
-        <p>
-            I am currently an undergraduate student at Sichuan University, majoring in Mechanics & Sotfware Engineering. My research focus on earthquake and volcano physics. I aim to use theoretical and numerical mehtods to elucidate observational data through a fundamental physics study.
-        </p>
+            <img src="imgs/portrait.jpg" alt="Profile Photo" class="photo">
+            <p>
+                Hello! I am Zekang Gong, currently pursuing a degree in Mechanics and Software Engineering at Sichuan University. I am passionate about using theoretical and computational methods to study geophysical phenomena such as volcanoes and earthquakes. My research aims to elucidate observational data through a fundamental physics study of the mechanisms behind these geophysical events.
+            </p>
+        </div>
     </section>
-    
-    <section id="interests">
-        <h2>Research Interests & Projects</h2>
-        <p>在这里展示你的研究兴趣。</p>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>Sichuan University</strong> | Sept. 2021 - June 2025 (expected)</p>
+        <p>Major in Mechanics & Software Engineering, College of Architecture and Environment</p>
+        <p>Innovation Class of 2021, Institute for Disaster Management and Reconstruction (IDMR)</p>
+        <p><strong>GPA:</strong> 3.60 | <strong>Rank:</strong> 3/30 (Top 10%)</p>
+        <p><strong>Core Courses:</strong> Theory of Viscoelasticity, Material Dynamics Behavior, Elastic Mechanics, Fluid Mechanics, Mathematical Methods in Engineering, Data Structures and Algorithms, Operating Systems, Numerical Methods, and more.</p>
     </section>
-    
+
     <section id="research">
-        <h2>Publications</h2>
-        <p>在这里展示你的研究成果。</p>
+        <h2>Research Interests</h2>
+        <p>I am motivated by the use of theoretical and computational methods to study geophysical phenomena such as volcanoes and earthquakes. I am excited about exploring the Earth and aim for my research to elucidate observational data through a fundamental physics study of the mechanisms behind geophysical events.</p>
     </section>
 
+    <section id="projects">
+        <h2>Projects</h2>
+        <h3>Deep Neural Network Based Surrogate Model for Earthquake Rupture Simulation</h3>
+        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
+        <p><strong>Duration:</strong> Feb. 2023 - Apr. 2024</p>
+        <p>Analyzed fault distribution of initial stress condition and frictional parameters. Used supercomputers to run rupture dynamics simulations and collect final slip and rupture front datasets. Collaborated with another undergraduate student; a paper is in preparation.</p>
 
+        <h3>Boundary Element Method for Fluid-filled Crack</h3>
+        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
+        <p><strong>Duration:</strong> Apr. 2023 - Present</p>
+        <p>Derived elastodynamics and fluid boundary integral in the frequency domain, implemented Matlab code to simulate seismic waves scattered by hydrofractures, and derived Green’s function and Boundary Integral Representation for linearized NS equation for compressible fluid.</p>
+
+        <h3>Quadlayer Krauklis Wave Model for Explaining VLP Tremors in the Gulf of Guinea</h3>
+        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
+        <p><strong>Duration:</strong> Apr. 2024 - Present</p>
+        <p>Formulated governing equations and boundary conditions for a quad-layer system containing an inviscid ocean, a thin crust, a viscous magmatic sill, and elastic half-space. Implemented code to solve matrix equations and investigate VLP tremors.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <p><strong>Programming:</strong> C++, Matlab, SQL, Shell</p>
+        <p><strong>Techniques:</strong> Linux, Docker, Git</p>
+        <p><strong>Languages:</strong> Native in Mandarin Chinese, Fluent in English</p>
+    </section>
 
     <section id="cv">
-        <h2>查看并下载我的 CV</h2>
-        <a href="cv.pdf" download>下载 CV</a>
+        <h2>View and Download My CV</h2>
+        <a href="cv.pdf" download>Download CV</a>
     </section>
 
     <script src="script.js"></script>
 </body>
 </html>
+
