@@ -1,5 +1,5 @@
 body {
-    font-family: Times New Romes, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -43,18 +43,15 @@ section {
 .about-content {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-}
-
-.about-content h1 {
-    margin-bottom: 0;
+    justify-content: space-between;
 }
 
 .photo {
-    max-width: 400px;
+    max-width: 45%;
+    height: auto;
     margin-right: 20px;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 2s ease-in-out;
 }
 
 .photo.show {
@@ -66,3 +63,4 @@ section {
     margin: 0;
     text-align: left;
 }
+
