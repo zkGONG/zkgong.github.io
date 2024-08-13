@@ -32,7 +32,6 @@ section {
 }
 
 #about {
-    display: flex;
     align-items: center;
 }
 
