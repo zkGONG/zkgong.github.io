@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gongzk</title>
-    <style>
-        html{
-            height: 100%;
-        }
-        body {
-            background-image: url("/background.jpg");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            opacity: 0.8;
-        }
-    </style>
+    <title>学术个人主页</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <div class="container">
-                <h1>龚泽康个人网站 <small>Github Pages</small></h1>
-                <p>up2</p>
-            </div>
-        </div>
-        <h3>分类</h3>
-        <ul class="list-group">
-            <li class="list-group-item"><a href="https://scu.edu.cn">CV</a></li>
-            <li class="list-group-item"><a href="https://scu.edu.cn">Works</a></li>
-            <li class="list-group-item"><a href="https://scu.edu.cn">Publications</a></li>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#research">研究成果</a></li>
+                <li><a href="#interests">研究兴趣</a></li>
+                <li><a href="#cv">查看CV</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        </ul>
-    </div>
+    <section id="about">
+        <h1>关于我</h1>
+        <img src="images/portrait.jpg" alt="个人照片" class="photo">
+        <p>欢迎来到我的学术主页！</p>
+    </section>
+
+    <section id="research">
+        <h2>研究成果</h2>
+        <p>在这里展示你的研究成果。</p>
+    </section>
+
+    <section id="interests">
+        <h2>研究兴趣</h2>
+        <p>在这里展示你的研究兴趣。</p>
+    </section>
+
+    <section id="cv">
+        <h2>查看并下载我的 CV</h2>
+        <a href="cv.pdf" download>下载 CV</a>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
