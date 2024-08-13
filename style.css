@@ -49,7 +49,7 @@ section {
 .photo {
     max-width: 45%;
     height: auto;
-    margin-right: 20px;
+    margin-right: 40px;
     opacity: 0;
     transition: opacity 2s ease-in-out;
 }
