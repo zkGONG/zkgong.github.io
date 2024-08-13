@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Times New Romes, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -32,6 +32,22 @@ section {
 }
 
 #about {
+    padding: 20px 0;
+}
+
+.about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.about-content h1 {
+    margin-bottom: 0;
 }
 
 .photo {
@@ -45,7 +61,8 @@ section {
     opacity: 1;
 }
 
-#about p {
+.about-content p {
     flex: 1;
+    margin: 0;
     text-align: left;
 }
