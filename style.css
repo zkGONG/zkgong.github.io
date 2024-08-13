@@ -31,15 +31,23 @@ section {
     padding: 20px;
 }
 
+#about {
+    display: flex;
+    align-items: center;
+}
+
 .photo {
-    max-width: 300px;
-    display: block;
-    margin: 0 auto;
-    border: 5px solid #333;
+    max-width: 400px;
+    margin-right: 20px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
 .photo.show {
     opacity: 1;
+}
+
+#about p {
+    flex: 1;
+    text-align: left;
 }
