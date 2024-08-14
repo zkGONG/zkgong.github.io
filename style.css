@@ -7,9 +7,9 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, rgba(150, 150, 150, 0.2), rgba(150, 150, 150, 0.05)); /* Gradient effect */
-    backdrop-filter: blur(8px); /* Frosted glass effect */
-    color: #fff;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 255, 255, 0.05)); /* Gradient effect */
+    backdrop-filter: blur(6px); /* Frosted glass effect */
+    color: #000;
     padding: 10px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -55,7 +55,7 @@ section {
 }
 
 #about {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .about-content-wrapper {
@@ -70,7 +70,7 @@ section {
 }
 
 .photo {
-    max-width: 35%;
+    max-width: 45%;
     height: auto;
     margin-right: 20px;
     opacity: 0;
@@ -81,11 +81,10 @@ section {
     opacity: 1;
 }
 
-.about-content p {
+.about-text {
     flex: 1;
-    margin: 0;
     text-align: left;
-    font-size: 1.5em; /* Increase the font size */
+    font-size: 1.25em; /* Increase the font size */
     background: rgba(255, 255, 255, 0.8); /* Light background for frosted glass effect */
     backdrop-filter: blur(10px); /* Apply the frosted glass effect */
     padding: 20px; /* Add padding inside the box */
@@ -93,4 +92,16 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
 }
 
+.about-text h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.75em;
+    font-weight: bold;
+    color: #333; /* Darker color for the name */
+}
 
+.about-text .email {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #666; /* Lighter color for the email */
+}
