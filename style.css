@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(100, 100, 100, 0.1)); /* Darker gradient effect */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(50, 50, 50, 0.2)); /* Darker gradient effect */
     backdrop-filter: blur(8px); /* Frosted glass effect */
     color: #fff;
     padding: 20px 0; /* Increase padding to make the navigation bar taller */
