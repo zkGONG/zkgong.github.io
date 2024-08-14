@@ -87,6 +87,7 @@ section {
 .about-text {
     flex: 1;
     text-align: left;
+    margin-top: 20px;
     font-size: 1.25em; /* Increase the font size */
     background: rgba(255, 255, 255, 0.8); /* Light background for frosted glass effect */
     backdrop-filter: blur(10px); /* Apply the frosted glass effect */
@@ -95,13 +96,13 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
 }
 .about-text .email {
-    margin-top: 35px;
+    margin-top: 20px;
     font-size: 1em;
     color: #666; /* Lighter color for the email */
 
 .about-text h2 {
-    margin-top: 35;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: bold;
     color: #333; /* Darker color for the name */
