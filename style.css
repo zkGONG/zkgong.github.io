@@ -10,7 +10,7 @@ header {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(50, 50, 50, 0.4)); /* Darker gradient effect */
     backdrop-filter: blur(8px); /* Frosted glass effect */
     color: #fff;
-    padding: 20px 0; /* Increase padding to make the navigation bar taller */
+    padding: 17px 0; /* Increase padding to make the navigation bar taller */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     position: sticky;
@@ -21,7 +21,7 @@ header {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 13px 17px; /* Increase padding to make clickable area larger */
+    padding: 15px 18px; /* Increase padding to make clickable area larger */
     display: inline-block;
     font-size: 2em; /* Increase the font size */
     font-weight: bold;
