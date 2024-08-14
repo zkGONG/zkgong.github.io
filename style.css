@@ -91,17 +91,18 @@ section {
     border-radius: 15px; /* Add rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
 }
+.about-text .email {
+    margin-top: 35px;
+    font-size: 1em;
+    color: #666; /* Lighter color for the email */
 
 .about-text h2 {
-    margin-top: 0;
+    margin-top: 35;
     margin-bottom: 10px;
-    font-size: 1.75em;
+    font-size: 2.5em;
     font-weight: bold;
     color: #333; /* Darker color for the name */
 }
 
-.about-text .email {
-    margin-top: 20px;
-    font-size: 1em;
-    color: #666; /* Lighter color for the email */
+
 }
