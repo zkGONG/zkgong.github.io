@@ -7,16 +7,27 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.05)); /* Gradient effect */
-    backdrop-filter: blur(6px); /* Frosted glass effect */
-    color: #000;
-    padding: 10px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)); /* Darker gradient effect */
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    color: #fff;
+    padding: 20px 0; /* Increase padding to make the navigation bar taller */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     position: sticky;
     top: 0;
     z-index: 1000;
 }
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px; /* Increase padding to make clickable area larger */
+    display: inline-block;
+    font-size: 1.2em; /* Increase the font size */
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
 
 nav ul {
     list-style-type: none;
@@ -31,14 +42,6 @@ nav ul li {
     position: relative;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px;
-}
 
 nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
