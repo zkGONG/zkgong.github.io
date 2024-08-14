@@ -23,8 +23,9 @@ nav ul li a {
     text-decoration: none;
     padding: 15px 20px; /* Increase padding to make clickable area larger */
     display: inline-block;
-    font-size: 1.2em; /* Increase the font size */
-    transition: all 0.3s ease-in-out;
+    font-size: 1.5em; /* Increase the font size */
+    font-weight: bold;
+    transition: all 1s ease-in-out;
     border-radius: 5px;
 }
 
@@ -44,9 +45,9 @@ nav ul li {
 
 
 nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 230, 0.2);
     backdrop-filter: blur(4px); /* Slight frosted effect on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
 }
 
 nav ul li a:active {
