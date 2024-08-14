@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -47,11 +47,11 @@ section {
 }
 
 .photo {
-    max-width: 40%;
+    max-width: 45%;
     height: auto;
-    margin-right: 40px;
+    margin-right: 20px;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .photo.show {
@@ -62,5 +62,11 @@ section {
     flex: 1;
     margin: 0;
     text-align: left;
+    font-size: 1.25em; /* Increase the font size */
+    background: rgba(255, 255, 255, 0.8); /* Light background for frosted glass effect */
+    backdrop-filter: blur(10px); /* Apply the frosted glass effect */
+    padding: 20px; /* Add padding inside the box */
+    border-radius: 15px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
 }
 
