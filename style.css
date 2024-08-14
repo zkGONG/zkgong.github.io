@@ -21,9 +21,9 @@ header {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 15px 20px; /* Increase padding to make clickable area larger */
+    padding: 13px 17px; /* Increase padding to make clickable area larger */
     display: inline-block;
-    font-size: 1.5em; /* Increase the font size */
+    font-size: 2em; /* Increase the font size */
     font-weight: bold;
     transition: all 1s ease-in-out;
     border-radius: 5px;
@@ -63,11 +63,13 @@ section {
 }
 
 .about-content-wrapper {
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .about-content {
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
