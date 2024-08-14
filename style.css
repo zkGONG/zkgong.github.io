@@ -25,7 +25,7 @@ nav ul li a {
     display: inline-block;
     font-size: 2em; /* Increase the font size */
     font-weight: bold;
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease-in-out;
     border-radius: 5px;
 }
 
@@ -45,7 +45,7 @@ nav ul li {
 
 
 nav ul li a:hover {
-    background: rgba(255, 255, 230, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px); /* Slight frosted effect on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
 }
