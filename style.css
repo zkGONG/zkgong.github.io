@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)); /* Gradient effect */
+    background: linear-gradient(135deg, rgba(150, 150, 150, 0.2), rgba(150, 150, 150, 0.05)); /* Gradient effect */
     backdrop-filter: blur(8px); /* Frosted glass effect */
     color: #fff;
     padding: 10px 0;
