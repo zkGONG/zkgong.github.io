@@ -3,74 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zekang Gong's Homepage</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GONG Zekang's Homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#cv">CV</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="research.html">Research</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section id="about">
-        <h1>About Me</h1>
-        <div class="about-content">
-            <img src="imgs/portrait.jpg" alt="Profile Photo" class="photo">
-            <div class="about-text">
-                <h2>Zekang Gong</h2> <!-- Add your name here -->
-                <p class="email">gongzekang@stu.scu.edu.cn</p> <!-- Add your email address here -->
-                <p>
-                    Hello! I am Zekang Gong, currently pursuing a degree in Mechanics and Software Engineering at Sichuan University. My academic focus lies at the intersection of geophysics, computational mechanics, and software engineering. I am particularly interested in using theoretical and numerical methods to study geophysical phenomena such as earthquakes and volcanoes. My goal is to apply these methods to better understand and explain observational data, thereby uncovering the physical mechanisms behind these natural events.
+
+    <section class="about-me">
+        <div class="photo">
+            <img src="img/portrait.jpg" alt="My Photo">
+        </div>
+        <div class="info">
+            <div class="name">GONG Zekang</div>
+            <div class="column">Email: <a href="mailto:gongzekang@stu.scu.edu.cn" class="email-link">gongzekang@stu.scu.edu.cn</a></div>
+            <div class="column">
+                Hi! I am an undergraduate at Sichuan University, working with 
+                <a href="梁超-地震与火山研究室 | 上线了sxl.cn (mysxl.cn)" class="email-link"> Prof. Chao Liang</a>. 
+                <p>I am motivated by the use of theoretical and computational methods to study geophysical phenomena such as earthquakes and volcanoes. 
+                    I am excited about exploring the Earth and aim for my research to elucidate observational data through a fundamental physics study of the mechanisms behind geophysical events. 
                 </p>
-                
             </div>
         </div>
     </section>
 
-
-
-    <section id="education">
+    <section class="education">
         <h2>Education</h2>
         <p><strong>Sichuan University</strong> | Sept. 2021 - June 2025 (expected)</p>
         <p>Major in Mechanics & Software Engineering, College of Architecture and Environment</p>
-    <section id="projects">
-        <h2>Projects</h2>
-        <h3>Deep Neural Network Based Surrogate Model for Earthquake Rupture Simulation</h3>
-        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
-        <p><strong>Duration:</strong> Feb. 2023 - Apr. 2024</p>
-        <p>In this project, I contributed to the generation of a large dataset by running over 300,000 simulations, providing insights into the rupture dynamics process, including phenomena like supershear transition. The project focuses on developing a deep neural network-based surrogate model to accelerate earthquake dynamic rupture (EDR) simulations.</p>
-
-        <h3>Boundary Element Method for Fluid-filled Crack</h3>
-        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
-        <p><strong>Duration:</strong> May 2023 - Present</p>
-        <p>This ongoing project involves reproducing existing work (Pointer et al., 1998) on fluid-filled cracks and further developing the Boundary Element Method (BEM) to solve multi-scale wave problems. The aim is to infer crack geometry and fluid properties from seismic data and simulations.</p>
-
-        <h3>Quadlayer Krauklis Wave Model for Explaining VLP Tremors in the Gulf of Guinea</h3>
-        <p><strong>Supervisor:</strong> Associate Professor Chao Liang, IDMR, Sichuan University</p>
-        <p><strong>Duration:</strong> Apr. 2024 - Present</p>
-        <p>This project focuses on deriving a rigorous model for VLP tremors using a quad-layer system, which includes an inviscid ocean, a thin crust, a viscous magmatic sill, and elastic half-space. The project aims to provide a more accurate understanding of VLP tremor excitation mechanisms.</p>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <p><strong>Programming:</strong> C++, Matlab, SQL, Shell</p>
-        <p><strong>Techniques:</strong> Linux, Docker, Git</p>
-        <p><strong>Languages:</strong> Native in Mandarin Chinese, Fluent in English</p>
+    <section class="cv">
+        <a href="./CV_ZKG.pdf" class="cv-button" download>Download CV</a>
     </section>
 
-    <section id="cv">
-        <h2>View and Download My CV</h2>
-        <a href="cv.pdf" download>Download CV</a>
-    </section>
-
-    <script src="script.js"></script>
 </body>
 </html>
-
