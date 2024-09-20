@@ -8,7 +8,7 @@ body {
 
 header {
 
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.65), rgba(50, 50, 50, 0.4)); /* Darker gradient effect */
+    background: linear-gradient(135deg, rgba(24, 31, 39, 0.727), rgba(50, 68, 92, 0.577)); /* Darker gradient effect */
     backdrop-filter: blur(8px); /* Frosted glass effect */
     color: #fff;
     padding: 12px 0; /* Increase padding to make the navigation bar taller */
@@ -18,38 +18,63 @@ header {
     top: 0;
     z-index: 1000;
 }
+nav ul li a {
+
+    text-decoration: none;
+    padding: 13px 15px; /* Increase padding to make clickable area larger */
+    display: inline-block;
+    font-size: 1.2em; /* Increase the font size */
+    
+    transition: all 0.5s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a.present-page{
+    color: #bfccd6;
+    font-weight: bold;
+}
+
+nav ul li a.page{
+    color: #ffffff;
+}
+
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
+    position: relative;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
 
 nav ul li a:hover {
-    color: #FFD700;
+    color: #e2ce11;
+    background: rgba(24, 31, 39, 0.727);
+    backdrop-filter: blur(4px); /* Slight frosted effect on hover */
+    box-shadow: 0 4px 8px rgba(24, 31, 39, 0.727); /* Subtle shadow on hover */
 }
+
+nav ul li a:active {
+    transform: scale(0.95); /* Simple click animation */
+}
+
 
 .about-me, .education, .cv {
     padding: 60px 20px;
-    margin-top: 60px;
+    
 }
 
 .about-me {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 1.1em;
 }
 
@@ -94,12 +119,12 @@ nav ul li a:hover {
 .cv-button {
     display: inline-block;
     padding: 15px 40px;
-    background-color: #2b66a6 
+    background-color: #2b66a6; 
     color: #fff; 
     text-align: center;
     border-radius: 5px; 
     text-decoration: none; 
-    font-size: 1.2em; 
+    font-size: 1.1em; 
     transition: background-color 0.3s ease; 
 }
 
