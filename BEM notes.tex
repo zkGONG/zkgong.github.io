@@ -1,0 +1,483 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\synctex=-1
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{setspace}
+\usepackage{wasysym}
+\doublespacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={Introduction to LyX},
+ pdfauthor={LyX Team},
+ pdfsubject={LyX-documentation Intro},
+ pdfkeywords={LyX, documentation},
+ linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{xeCJK}
+\fi
+
+\usepackage{indentfirst}
+\renewcommand\abstractname{摘要}
+\renewcommand\refname{参考文献}
+
+\makeatother
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}%
+\title{\textbf{Boundary Element Method}}
+\author{Gong Zekang}
+\maketitle
+
+\section{Governing Equations}
+
+Equation of motion for elastic waves:
+\begin{equation}
+(\lambda+\mu)u_{j,ji}+\mu u_{i,jj}+f_{i}=\rho\ddot{u_{i}}
+\end{equation}
+
+where $\lambda$ and $\mu$ are Lame constants, $u_{i}$ is the displacement
+vector, $f_{i}$ is the body force applied to the mass point and $\rho$
+is the density of the medium.
+
+\section{Boundary Integral}
+
+\subsection{Elastic Medium}
+
+\subsubsection*{Betti Reciprocal Theorem}
+
+Betti reciprocal theorem (without considering the inertial force):
+In the elastic domain $D$ with boundary $S$, let $u_{i}$ and $u_{i}^{*}$
+be the displacement fields from the body force $f_{i}$ and $f_{i}^{*}$,
+respectively. The two fields exhibit the relation:
+\[
+\int_{D}f_{i}^{*}u_{i}dD+\int_{S}t_{i}^{*}u_{i}dS=\int_{D}f_{i}u_{i}^{*}dD+\int_{S}t_{i}u_{i}^{*}dS
+\]
+
+yields
+
+\begin{equation}
+\int_{D}f_{i}^{*}u_{i}dD-\int_{D}f_{i}u_{i}^{*}dD+=\int_{S}t_{i}u_{i}^{*}dS-\int_{S}t_{i}^{*}u_{i}dS.
+\end{equation}
+
+
+\subsubsection*{Introduction of Green's Function}
+
+Now we suppose that displacement field $u_{i}^{*}$ is exicited by
+a unit pulse force in the $j$ direction at point $x^{'}$ in domain
+$D$. The force can be expressed as fucntion:
+\[
+f_{i}^{*}=\delta_{ij}\delta(x-x')
+\]
+where $\delta_{ij}$ is the Kronecker delta ande $\delta(x-x')$ is
+the Dirac function.
+
+The displacement field excited by this single source is called the
+Green's function in elastodynamics and is written as $G_{ij}(x;x')$.
+From equation (1), there is 
+
+\[
+(\lambda+\mu)G_{kj,ik}+\mu G_{ij,kk}-\rho\ddot{G_{ij}}=-\delta_{ij}\delta(x-x').
+\]
+
+
+\subsubsection*{Direct BEM and Singularity on Boundary S}
+
+According to the property of the Dirac function, we have
+\begin{equation}
+\int_{D}u_{i}\delta_{ij}\delta(x-x')dD_{x'}=\delta_{ij}u_{i}(x).
+\end{equation}
+
+From equation (2), replacing $u^{*}$, $t^{*}$ by $G_{ij}$, $T_{ij}$
+respectively , we deduce
+\[
+\int_{D}u_{i}\delta_{ij}\delta(x-x')dD_{x'}-\int_{D}G_{ij}f_{i}dD=\int_{S}(G_{ij}t_{i}-u_{i}T_{ij})dS,
+\]
+
+and using equation (3), we arrive at
+\begin{equation}
+\delta_{ij}u_{i}(x)=\int_{S}[G_{ij}(x;x')t_{i}(x)-u_{i}T_{ij}(x,x')]dS_{x'}+\int_{D}G_{ij}(x;x')f_{i}dD
+\end{equation}
+
+which is derived under the condition of $x'$ being inside $D$.
+
+Expressions such as eq.(4) for the displacement within region $D$,
+that involve integrals like
+\begin{equation}
+\int_{S}G_{ij}\psi_{i}ds_{x}
+\end{equation}
+and
+\begin{equation}
+\int_{S}T_{ij}\psi_{i}ds_{x}
+\end{equation}
+
+The Green's function $G_{ij}$ in 2-D static P-SV motion is given
+by
+\[
+G_{ij}^{s}(x;x')=\dfrac{-1}{8\pi\mu(1-v)}[(3-4v)\delta_{ij}\log r-\hat{r_{i}}\hat{r_{j}}]+A_{ij},
+\]
+
+where $v$ is Poisson's ratio, $r=|x-x'|,$ $\hat{r_{i}}=(x_{i}-x_{i}')/r$,
+and $A_{ij}$ is a constant tensor. There is therefore a logarithmic
+singularity in $G_{ij}$ at $x=x'$, but this is integrable.
+
+Considering eq.(6), $T_{ij}$ is given by
+
+\[
+T_{ij}(x;x')=c_{ipkl}\hat{n_{p}}(x)\dfrac{\partial}{\partial x_{l}}G_{kj}(x;x'),
+\]
+
+where $\hat{n}$ is the outward normal to the boundary $S$. The static
+equivalent of this is
+\[
+T_{ij}^{s}(x;x')=\dfrac{-1}{4\pi r(1-v)}\{(1-2v)(\hat{n}_{j}\hat{r}_{i}-\hat{n}_{i}\hat{r}_{j})+[(1-2v)\delta_{ij}+2\hat{r}_{i}\hat{r}_{j}]\hat{r}_{k}\hat{n}_{k}\},
+\]
+
+and this has a $(\dfrac{1}{r})$ singularity, which is not integrable
+when $x'=x^{S}\in S.$
+
+Consider the point $x'$ within the region $D$ as it approaches a
+point $x^{S}$on the boundary $S.$We split the curve. There we have,
+\[
+S=S'+S_{\epsilon},
+\]
+
+where $S_{\epsilon}$ is a section of curve centred on $x^{S}$ and
+length of $\epsilon$ on either side. Thus the main task is to evaluate
+\begin{equation}
+\underset{x'\shortrightarrow x^{S}}{\lim}\int_{S_{\epsilon}}T_{ij}\psi_{i}ds_{x}=\underset{x'\shortrightarrow x^{S}}{\lim}\{\psi_{i}(x^{S})\int_{S_{\epsilon}}T_{ij}(x;x')ds_{x}+\int_{S_{\epsilon}}T_{ij}(x;x')[\psi_{i}(x)-\psi(x^{S})]ds_{x}\}.
+\end{equation}
+
+If $\psi$ is Hölder continuous on S, there we have
+\[
+|\psi_{i}(x_{1})-\psi_{i}(x_{2})|\le L|x_{1}-x_{2}|^{\alpha},
+\]
+
+where $0<\alpha\le1$. On the assumption that this inequality holds,
+the second integral in eq. (7) is integrable and bounded when $x'=x^{S}$.
+Thus the main task is to evaluate the integral $\int_{S_{\epsilon}}T_{ij}(x;x')ds_{x}$.
+
+We have assumed that $S$ is smooth and so we may replace the curve
+$S_{\epsilon}$ by a section of straight line, tangent to $S_{\epsilon}$
+at $x^{S}$ with error of order of $\epsilon$: 
+\[
+\int_{S_{\epsilon}}T_{ij}(x;x')ds_{x}=\int_{-\epsilon}^{\epsilon}T_{ij}(x;x')+O(\epsilon),
+\]
+$x'=(0,\eta),\hat{n}(x)=(0,-1).$ 
+
+If let $x'\shortrightarrow x^{S}$,the integral $\int_{S_{\epsilon}}T_{ij}(x;x')$
+of static form for $T_{ij}$ is given by
+\[
+\int_{S_{\epsilon}}T_{ij}(x;x')ds_{x}=-\dfrac{1}{2}\delta_{ij}+O(\epsilon).
+\]
+
+
+\subsubsection*{Indirect BEM}
+
+\subsection{Fluid Medium}
+
+Consider the linear acoustic first-order wave equation:
+
+\[
+\dfrac{1}{K}\dot{p}+\nabla\cdot v=f,
+\]
+
+and Newton's Second Law:
+
+\[
+\rho\dot{v}+\nabla p=0,
+\]
+
+where $v$ is velocity field and $f$ is the loading.
+
+Consider the dispalcement potential function $\psi$ that satisfy
+the following diferential relations:
+\[
+u=\nabla\psi
+\]
+\[
+p=-\rho\ddot{\psi}.
+\]
+
+The scalar wave equation can be expressed as:
+\begin{equation}
+[\dfrac{1}{c^{2}}\ddot{\psi}-\nabla^{2}\psi]_{t}=f,
+\end{equation}
+
+where $c=\dfrac{K}{\rho}$ is the wave velocity. Integrating eq.(8),
+we have second order scalar wave equation:
+\[
+\dfrac{1}{c^{2}}\ddot{\psi}-\nabla^{2}\psi=F.
+\]
+
+Define Fourier transform as
+\[
+\hat{u}(\omega)=\int_{-\infty}^{+\infty}u(t)e^{i\omega t}dt,
+\]
+
+and Fourier transform the wave equation, we have
+\begin{equation}
+-\dfrac{\omega^{2}}{c^{2}}\hat{\psi}-\nabla^{2}\hat{\psi}=\hat{F.}
+\end{equation}
+
+The Green's function for this problem satisfies 
+\[
+-\dfrac{\omega^{2}}{c^{2}}\hat{G}(x;x')-\nabla^{2}\hat{G}(x;x')=\delta(x-x').
+\]
+
+Multiply the Green's function onto the eq.(9), and integrate over
+the finite volume $V$, we have
+\[
+\int_{V}-\dfrac{\omega^{2}}{c^{2}}\psi G-G\nabla^{2}\psi-GFdV_{x}=0.
+\]
+
+Then, apply the Green's second identity
+\[
+\int_{V}G\nabla^{2}\psi-\psi\nabla^{2}GdV=\int_{\partial V}\boldsymbol{n}\cdot(G\nabla\psi-\psi\nabla G)dS,
+\]
+
+and substitute the term $G\nabla^{2}\psi$, we have
+
+\[
+\int_{V}-\dfrac{\omega^{2}}{c^{2}}\psi G-GFdV_{x}=\int_{V}\psi\nabla^{2}GdV+\int_{\partial V}\boldsymbol{n}\cdot(G\nabla\psi-\psi\nabla G)dS_{x},
+\]
+
+then rearrange this equation, we have
+\[
+\int_{V}\psi[-\dfrac{\omega^{2}}{c^{2}}G-\nabla^{2}G]dV_{x}=\int_{V}GFdV+\int_{\partial V}\boldsymbol{n}\cdot(G\nabla\psi-\psi\nabla G)dS_{x},
+\]
+
+Use the property of the Green's function:
+\[
+\psi(x)=\int_{V}\psi(x)\delta(x-x')dV_{x}=\int_{V}GFdV_{x}+\int_{\partial V}\boldsymbol{n}\cdot(G\nabla\psi-\psi\nabla G)dS_{x}
+\]
+
+The term in absence of sources,
+\[
+\psi(x)=\int_{\partial V}\boldsymbol{n}\cdot(G\nabla\psi-\psi\nabla G)dS_{x}
+\]
+
+
+\section{Green's Function}
+
+\subsection{Contitutive Model}
+
+\[
+T_{ij}(x,x')=c_{ipkl}\hat{n}_{p}(x)\dfrac{\partial}{\partial x_{l}}G_{kj}(x,x'),
+\]
+
+where $\hat{n}(x)$ is the outward normal vector to the boundary $S.$
+And $c_{ipkl}=\lambda\delta_{ip}\delta_{kl}+\mu(\delta_{ik}\delta_{pl}+\delta_{il}\delta_{pk}),$where
+$\lambda=\dfrac{2v\mu}{1-2v}$. 
+
+\subsection{Green's Function of Displacement and Traction}
+
+For 2D in plane (P-SV) problem, 
+\[
+G_{ij}=
+\]
+
+$\dfrac{\partial H_{0}^{(2)}(kr)}{\partial x_{j}}=-k\hat{r}_{j}H_{1}^{(2)}(kr)$,
+
+$\dfrac{\partial r}{\partial x_{j}}=\hat{r}_{j},$
+
+$\dfrac{\partial^{2}r}{\partial x_{j}\partial x_{l}}=\hat{r}_{jl}=-\dfrac{\hat{r}_{j}\halfnote\hat{r}_{l}}{r}+\delta_{jl}\dfrac{1}{r},$
+
+in order to avoid singularity, we use $\dfrac{\partial H_{1}^{(2)}(x)}{\partial x}=\dfrac{1}{2}(H_{0}^{(2)}(x)-H_{2}^{(2)}(x))$.
+
+$\dfrac{\partial H_{1}^{(2)}(kr)}{\partial x_{j}}=k\hat{r}_{j}\dfrac{1}{2}(H_{0}^{(2)}(kr)-H_{2}^{(2)}(kr)),$
+
+\begin{eqnarray*}
+T_{ij}(x,x') & = & c_{ipkl}\hat{n}_{p}(x)\dfrac{\partial}{\partial x_{l}}G_{kj}(x,x')
+\end{eqnarray*}
+
+\[
+=c_{ipkl}\hat{n}_{p}(x)\dfrac{i}{4\mu}\{-\delta_{kj}k_{\beta}\hat{r}_{l}H_{1}^{(2)}(k_{\beta}r)-\dfrac{1}{k_{\beta}}(\dfrac{\partial}{\partial x_{l}}\dfrac{1}{r}\hat{r}_{k}\hat{r}_{j}+\dfrac{1}{r}\hat{r}_{k}\hat{r}_{jl}+\dfrac{1}{r}\hat{r}_{j}\hat{r}_{kl})[H_{1}^{(2)}(k_{\beta}r)-\dfrac{\alpha}{\beta}H_{1}^{(2)}(k_{\alpha}r)]
+\]
+
+\[
+-\dfrac{1}{2k_{\beta}r}\hat{r}_{k}\hat{r}_{j}\hat{r}_{l}[k_{\beta}H_{0}^{(2)}(k_{\beta}r)-k_{\beta}H_{2}^{(2)}(k_{\beta}r)-\dfrac{\beta}{\alpha}k_{\alpha}H_{2}^{(2)}(k_{\alpha}r)+\dfrac{\beta}{\alpha}k_{\alpha}H_{0}^{(2)}(k_{\alpha}r)]\}
+\]
+
+\[
+-\dfrac{i}{4\mu}\{(\hat{r}_{k}\hat{r}_{jl}+\hat{r}_{j}\hat{r}_{kl})[H_{0}^{(2)}(k_{\beta}r)-\dfrac{\beta^{2}}{\alpha^{2}}H_{0}^{(2)}(k_{\alpha}r)]+\hat{r}_{k}\hat{r}_{j}\hat{r}_{l}[\dfrac{\beta^{2}}{\alpha^{2}}k_{\alpha}H_{1}^{(2)}(k_{\alpha}r)-k_{\beta}H_{1}^{(2)}(k_{\beta}r)]\}.
+\]
+Considering $T_{nk},$ where suffix $n$ stands for normal vector
+outwards the boundary, $T_{nk}=$$\hat{n}_{l}T_{lk}$. ( $\hat{n}=(cos\theta,sin\theta)$
+). 
+
+\begin{eqnarray*}
+T_{ij}(x,x') & = & c_{ipkl}\hat{n}_{p}(x)\dfrac{\partial}{\partial x_{l}}G_{kj}(x,x')
+\end{eqnarray*}
+
+\[
+=c_{ipkl}\hat{n}_{p}(x)\dfrac{i}{4\mu}\{-\delta_{kj}k_{\beta}\hat{r}_{l}H_{1}^{(2)}(k_{\beta}r)-\dfrac{1}{k_{\beta}}(\dfrac{\partial}{\partial x_{l}}\dfrac{1}{r}\hat{r}_{k}\hat{r}_{j}+\dfrac{1}{r}\hat{r}_{k}\hat{r}_{jl}+\dfrac{1}{r}\hat{r}_{j}\hat{r}_{kl})[H_{1}^{(2)}(k_{\beta}r)-\dfrac{\alpha}{\beta}H_{1}^{(2)}(k_{\alpha}r)]
+\]
+
+\[
+-\dfrac{1}{2k_{\beta}r}\hat{r}_{k}\hat{r}_{j}\hat{r}_{l}[k_{\beta}H_{0}^{(2)}(k_{\beta}r)-k_{\beta}H_{2}^{(2)}(k_{\beta}r)-\dfrac{\beta}{\alpha}k_{\alpha}H_{2}^{(2)}(k_{\alpha}r)+\dfrac{\beta}{\alpha}k_{\alpha}H_{0}^{(2)}(k_{\alpha}r)]\}
+\]
+
+\[
+-\dfrac{i}{4\mu}\{(\hat{r}_{k}\hat{r}_{jl}+\hat{r}_{j}\hat{r}_{kl})[H_{0}^{(2)}(k_{\beta}r)-\dfrac{\beta^{2}}{\alpha^{2}}H_{0}^{(2)}(k_{\alpha}r)]+\hat{r}_{k}\hat{r}_{j}\hat{r}_{l}[\dfrac{\beta^{2}}{\alpha^{2}}k_{\alpha}H_{1}^{(2)}(k_{\alpha}r)-k_{\beta}H_{1}^{(2)}(k_{\beta}r)]\}.
+\]
+Considering $T_{nk},$ where suffix $n$ stands for normal vector
+outwards the boundary, $T_{nk}=$$\hat{n}_{l}T_{lk}$. ( $\hat{n}=(cos\theta,sin\theta)$
+). 
+
+\section{viscous fluid}
+
+\subsection{Governing equation}
+
+Governing Equation:
+
+\[
+\boldsymbol{u}_{,tt}-c_{p}^{2}\nabla(\nabla\cdot\boldsymbol{u})-\dfrac{\mu}{\rho}\nabla^{2}\boldsymbol{u}_{,t}=f
+\]
+
+\[
+\omega^{2}\boldsymbol{u}+(c_{p}^{2}-\dfrac{i\omega\mu}{\rho})\nabla(\nabla\cdot\boldsymbol{u})+\dfrac{i\omega\mu}{\rho}\nabla\times(\nabla\times\boldsymbol{u})=\boldsymbol{-f}
+\]
+
+\[
+\omega^{2}\boldsymbol{u}+\hat{c}_{p}^{2}\nabla^{2}\boldsymbol{u}-\hat{c}_{s}^{2}\nabla\times(\nabla\times\boldsymbol{u})=\boldsymbol{-f}
+\]
+
+where $c_{p}=\sqrt{\dfrac{K}{\rho}}$, $\hat{c}_{p}=\sqrt{\dfrac{-i\omega\mu}{\rho}+c_{p}^{2}}$,
+$\hat{c}_{s}=\sqrt{\dfrac{-i\omega\mu}{\rho}}$.
+
+Green's function for 2-D LNS:
+
+\begin{align*}
+G_{ij} & =\dfrac{i}{4\mu}\{\delta_{ij}H_{0}^{(2)}(k_{s}r)-\dfrac{1}{k_{s}}\dfrac{\partial r}{\partial x_{i}}\dfrac{\partial r}{\partial x_{j}}[H_{1}^{(2)}(k_{s}r)-\dfrac{\hat{c}_{s}}{\hat{c}_{p}}H_{1}^{(2)}(k_{p}r)]\}\\
+ & -\dfrac{i}{4\mu}\{\text{\ensuremath{\dfrac{\partial r}{\partial x_{i}}\dfrac{\partial r}{\partial x_{j}}}}[H_{0}^{(2)}(k_{s}r)-\dfrac{\hat{c}_{s}^{2}}{\hat{c}_{p}^{2}}H_{0}^{(2)}(k_{s}r)]\}
+\end{align*}
+
+On the boundary $S$, 
+\[
+u_{total}=u_{incident}+u_{diffracted}=u_{refracted}
+\]
+
+Thus we have
+\[
+u_{j}^{E}(\boldsymbol{x})-u_{j}^{I}(\boldsymbol{x})=-u_{j}^{(i)}(\boldsymbol{x})
+\]
+
+\[
+t_{j}^{E}(\boldsymbol{x})-t_{j}^{I}(\boldsymbol{x})=-t_{j}^{(i)}(\boldsymbol{x}),\ \boldsymbol{x}\in S
+\]
+
+where $E$ and $I$ indicates the (displacment \& traction) response
+casused by boundary $S$ alone.
+
+The discrete version is:
+\[
+\sum_{l=1}^{M}\bar{G}_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})\phi_{kl}^{E}-\sum_{l=1}^{M}\bar{G}_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})\phi_{kl}^{I}=-u_{j}^{(i)}(\boldsymbol{x}_{m}),\ m=1...M
+\]
+
+\[
+\sum_{l=1}^{M}\bar{T}_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})\phi_{kl}^{E}-\sum_{l=1}^{M}\bar{T}_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})\phi_{kl}^{I}=-t_{j}^{(i)}(\boldsymbol{x}_{m}),\ m=1...M
+\]
+
+
+\subsection{Boundary Integral Representation}
+
+\[
+\bar{G}_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})=\int_{\Delta S_{l}}G_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi})dS_{\boldsymbol{\xi}},
+\]
+
+\[
+\bar{T}_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})=\pm\dfrac{1}{2}\delta_{jk}\delta_{ml}+\int_{\Delta S_{l}}T_{jk}^{E}(\boldsymbol{x}_{m},\boldsymbol{\xi})dS_{\boldsymbol{\xi}}
+\]
+
+\[
+\bar{G}_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})=\int_{\Delta S_{l}}G_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi})dS_{\boldsymbol{\xi}},
+\]
+
+\[
+\bar{T}_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi}_{l})=\pm\dfrac{1}{2}\delta_{jk}\delta_{ml}+\int_{\Delta S_{l}}T_{jk}^{I}(\boldsymbol{x}_{m},\boldsymbol{\xi})dS_{\boldsymbol{\xi}}
+\]
+
+\[
+\mathcal{L}\boldsymbol{u}+\boldsymbol{f}=0
+\]
+
+\[
+\mathcal{L}\boldsymbol{u}=\omega^{2}\boldsymbol{u}+c_{p}^{2}\nabla(\nabla\cdot\boldsymbol{u})-i\omega\dfrac{\mu}{\rho}\nabla^{2}\boldsymbol{u}
+\]
+\begin{align*}
+\int v_{j}(\mathcal{L}u_{i})_{j}-u_{j}(\mathcal{L}v_{i})_{j}dV & =c_{p}^{2}\int v_{j}u_{i,ij}-u_{j}v_{i,ij}dV-i\omega\dfrac{\mu}{\rho}\int v_{i}u_{i,jj}-u_{i}v_{i,jj}dV\\
+ & =c_{p}^{2}\int(\nabla\cdot\boldsymbol{u})\boldsymbol{n}\cdot\boldsymbol{v}-(\nabla\cdot\boldsymbol{v})\boldsymbol{n}\cdot\boldsymbol{u}dS-i\omega\dfrac{\mu}{\rho}\int\boldsymbol{v}\nabla\boldsymbol{u}-\boldsymbol{u}\nabla\boldsymbol{v}dS,\\
+ & \ (Green's\ Idenities)
+\end{align*}
+
+\begin{align*}
+\alpha u(\boldsymbol{x}) & =\int_{\Omega}f(\boldsymbol{\xi})G(\boldsymbol{x},\boldsymbol{\xi})d\boldsymbol{\xi}+\\
+ & \int_{S}\boldsymbol{u}(\boldsymbol{\xi})[c_{p}^{2}(\nabla\cdot G(\boldsymbol{x},\boldsymbol{\xi}))\boldsymbol{n}-i\omega\dfrac{\mu}{\rho}\nabla G(\boldsymbol{x},\boldsymbol{\xi})]-G(\boldsymbol{x},\boldsymbol{\xi})[c_{p}^{2}(\nabla\cdot\boldsymbol{u}(\boldsymbol{\xi}))\boldsymbol{n}-i\omega\dfrac{\mu}{\rho}\nabla\boldsymbol{u}(\boldsymbol{\xi})]dS_{\xi}
+\end{align*}
+
+
+\section*{APPENDIX}
+
+\subsection*{Vector Denotation and Identities}
+
+consider scalar $u$ and vector $\boldsymbol{V}$: 
+
+\[
+grad\ u=\nabla u=u_{,i}=\dfrac{\partial u}{\partial x_{i}}
+\]
+
+\[
+div\ u=\nabla\cdot u=u_{i,i}
+\]
+
+\[
+\nabla\cdot(\nabla u)=\nabla^{2}u=u_{,ii}
+\]
+
+\[
+\nabla\cdot(\nabla\boldsymbol{V})=\nabla^{2}\boldsymbol{V}=\nabla^{2}v_{i}=v_{i,jj}
+\]
+
+\[
+\nabla\times\boldsymbol{V}=\begin{vmatrix}\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k}\\
+\dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z}\\
+u & v & w
+\end{vmatrix}
+\]
+
+\[
+\nabla\times\nabla u=0,\ \text{curl of a gradient is zero}
+\]
+
+\[
+\nabla\cdot(\nabla\times\boldsymbol{V})=0,\ \text{divergence of a curl is zero }
+\]
+
+\[
+\nabla^{2}\boldsymbol{V}=\nabla(\nabla\cdot\boldsymbol{V})-\nabla\times(\nabla\times\boldsymbol{V}),\!\ \ \nabla\times\nabla\times(\nabla\times\boldsymbol{V})=-\nabla\times(\nabla^{2}\boldsymbol{V}).
+\]
+
+\[
+\text{divergency theorem: }\int_{\Omega}\nabla\cdot\boldsymbol{V}dA=\int_{\partial\Omega}\boldsymbol{V}\cdot\boldsymbol{n}ds
+\]
+
+\end{CJK}
+
+\end{document}
